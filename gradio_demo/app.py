@@ -232,19 +232,4 @@ with gr.Blocks() as demo:
     """)
     # examples = gr.Gallery(label="Examples")
 
-    gr.Markdown(
-    """
-    ## Citation
-    If InstantIR is helpful to your work, please cite our paper via:
-
-    ```
-    @article{huang2024instantir,
-        title={InstantIR: Blind Image Restoration with Instant Generative Reference},
-        author={Huang, Jen-Yuan and Wang, Haofan and Wang, Qixun and Bai, Xu and Ai, Hao and Xing, Peng and Huang, Jen-Tse},
-        journal={arXiv preprint arXiv:2410.06551},
-        year={2024}
-    }
-    ```
-    """)
-
 demo.queue().launch()

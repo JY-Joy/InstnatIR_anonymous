@@ -1,34 +1,11 @@
 <div align="center">
 <h1>InstantIR: Blind Image Restoration with</br>Instant Generative Reference</h1>
 
-[**Jen-Yuan Huang**](https://jy-joy.github.io)<sup>1&nbsp;2</sup>, [**Haofan Wang**](https://haofanwang.github.io/)<sup>2</sup>, [**Qixun Wang**](https://github.com/wangqixun)<sup>2</sup>, [**Xu Bai**](https://huggingface.co/baymin0220)<sup>2</sup>, Hao Ai<sup>2</sup>, Peng Xing<sup>2</sup>, [**Jen-Tse Huang**](https://penguinnnnn.github.io)<sup>3</sup> <br>
-
-<sup>1</sup>Peking University · <sup>2</sup>InstantX Team · <sup>3</sup>The Chinese University of Hong Kong
-
-<!-- <sup>*</sup>corresponding authors -->
-
-<a href='https://arxiv.org/abs/2410.06551'><img src='https://img.shields.io/badge/arXiv-2410.06551-b31b1b.svg'>
-<a href='https://jy-joy.github.io/InstantIR/'><img src='https://img.shields.io/badge/Project-Website-green'></a>
-<a href='https://huggingface.co/InstantX/InstantIR'><img src='https://img.shields.io/static/v1?label=Model&message=Huggingface&color=orange'></a> 
-<a href='https://huggingface.co/spaces/JOY-Huang/InstantIR'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-yellow'></a>
-<!-- [![ModelScope](https://img.shields.io/badge/ModelScope-Studios-blue)](https://modelscope.cn/studios/instantx/InstantID/summary)
-[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/InstantX/InstantID) -->
-
 </div>
 
 **InstantIR** is a novel single-image restoration model designed to resurrect your damaged images, delivering extrem-quality yet realistic details. You can further boost **InstantIR** performance with additional text prompts, even achieve customized editing!
 
-
-<!-- >**Abstract**: <br>
-> Handling test-time unknown degradation is the major challenge in Blind Image Restoration (BIR), necessitating high model generalization. An effective strategy is to incorporate prior knowledge, either from human input or generative model. In this paper, we introduce Instant-reference Image Restoration (InstantIR), a novel diffusion-based BIR method which dynamically adjusts generation condition during inference. We first extract a compact representation of the input via a pre-trained vision encoder. At each generation step, this representation is used to decode current diffusion latent and instantiate it in the generative prior. The degraded image is then encoded with this reference, providing robust generation condition. We observe the variance of generative references fluctuate with degradation intensity, which we further leverage as an indicator for developing a sampling algorithm adaptive to input quality. Extensive experiments demonstrate InstantIR achieves state-of-the-art performance and offering outstanding visual quality. Through modulating generative references with textual description, InstantIR can restore extreme degradation and additionally feature creative restoration. -->
-
 <img src='assets/teaser_figure.png'>
-
-## 📢 News
-- **11/07/2024** 🔥 Our [Space Demo](https://huggingface.co/spaces/JOY-Huang/InstantIR) is online, thanks [HuggingFace🤗](https://huggingface.co)! Play with **InstantIR** and leave your feedbacks!
-- **11/03/2024** 🔥 We provide a Gradio launching script for InstantIR, you can now deploy it on your local machine!
-- **11/02/2024** 🔥 InstantIR is now compatitble with `diffusers`🧨, you can utilize features from this fascinating package!
-- **10/15/2024** 🔥 Code and model released!
 
 ## 📝 TODOs:
 - [ ] Tutorial video
@@ -49,18 +26,6 @@ conda create -n instantir python=3.9 -y
 conda activate instantir
 pip install -r requirements.txt
 ```
-
-#### 2. Download pre-trained models
-
-InstantIR is built on SDXL and DINOv2. You can download them either directly from 🤗 huggingface or using Python package.
-
-| 🤗 link | Python command
-| :--- | :----------
-|[SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) | `hf_hub_download(repo_id="stabilityai/stable-diffusion-xl-base-1.0")`
-|[facebook/dinov2-large](https://huggingface.co/facebook/dinov2-large) | `hf_hub_download(repo_id="facebook/dinov2-large")`
-|[InstantX/InstantIR](https://huggingface.co/InstantX/InstantIR) | `hf_hub_download(repo_id="InstantX/InstantIR")`
-
-Note: Make sure to import the package first with `from huggingface_hub import hf_hub_download` if you are using Python script.
 
 #### 3. Inference
 
@@ -173,28 +138,3 @@ As described in our paper, the training of InstantIR is conducted in two stages.
 | `<num_of_gpus>` | number of available GPUs
 
 Other training hyperparameters we used in our experiments are provided in the corresponding `.sh` scripts. You can tune them according to your own needs.
-
-## 💪 Community Resoucres
-We sincerely appreciate the community's contribution to InstantIR. Here are some excellent works from the community:
-
-### Duplicate Demo
-[fffiloni/InstantIR](https://huggingface.co/spaces/fffiloni/InstantIR)
-
-### ComfyUI
-[smthemex/ComfyUI_InstantIR_Wrapper](https://github.com/smthemex/ComfyUI_InstantIR_Wrapper)
-
-## 👏 Acknowledgment
-Our work is sponsored by [HuggingFace](https://huggingface.co) and [fal.ai](https://fal.ai).
-
-## 🎓 Citation
-
-If InstantIR is helpful to your work, please cite our paper via:
-
-```
-@article{huang2024instantir,
-  title={InstantIR: Blind Image Restoration with Instant Generative Reference},
-  author={Huang, Jen-Yuan and Wang, Haofan and Wang, Qixun and Bai, Xu and Ai, Hao and Xing, Peng and Huang, Jen-Tse},
-  journal={arXiv preprint arXiv:2410.06551},
-  year={2024}
-}
-```

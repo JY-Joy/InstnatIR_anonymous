@@ -256,7 +256,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--vision_encoder_path",
         type=str,
-        default='/share/huangrenyuan/model_zoo/vis_backbone/dinov2_large',
+        default='facebook/dinov2_large',
         help="Path to image encoder for IP-Adapters or model identifier from huggingface.co/models.",
     )
     parser.add_argument(
