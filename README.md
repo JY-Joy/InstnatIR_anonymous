@@ -20,7 +20,7 @@ We provide a Gradio Demo on 🤗, click the button below and have fun with Insta
 ### Quick start
 #### 1. Clone this repo and setting up environment
 ```sh
-git clone https://github.com/instantX-research/InstantIR.git
+git clone https://anonymous.4open.science/r/InstnatIR_anonymous-4E22
 cd InstantIR
 conda create -n instantir python=3.9 -y
 conda activate instantir
